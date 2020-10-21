@@ -22,8 +22,12 @@ mix.js('resources/js/app.js', 'public/js')
 //Panel
 mix.scripts([
     'resources/panel/scripts/main.js',
-], 'public/panel/main.js');
+], 'public/panel/assets/scripts/main.js');
 
 mix.styles([
     'resources/panel/styles/main.css',
 ], 'public/panel/main.css');
+
+mix.copyDirectory('resources/panel/fonts', 'public/panel/assets/fonts');
+
+mix.copyDirectory('resources/panel/images', 'public/panel/assets/images');
