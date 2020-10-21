@@ -11,9 +11,19 @@ const mix = require('laravel-mix');
  |
  */
 
+ //Laravel
 mix.js('resources/js/app.js', 'public/js')
     .postCss('resources/css/app.css', 'public/css', [
         require('postcss-import'),
         require('tailwindcss'),
     ])
     .webpackConfig(require('./webpack.config'));
+
+//Panel
+mix.scripts([
+    'resources/panel/scripts/main.js',
+], 'public/panel/main.js');
+
+mix.styles([
+    'resources/panel/styles/main.css',
+], 'public/panel/main.css');
