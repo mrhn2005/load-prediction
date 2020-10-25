@@ -31,3 +31,11 @@ Route::post('/login', [LoginController::class, 'authenticate'])
 Route::middleware(['auth:sanctum', 'verified'])
     ->get('/dashboard', [PanelController::class, 'dashboard'])
     ->name('dashboard');
+
+Route::group([
+    'prefix' => 'dashboard',
+    'middleware' => ['auth:sanctum', 'verified']
+], function () {
+    Route::get('/', [PanelController::class, 'dashboard'])->name('dashboard');
+    Route::post('/change-city', [PanelController::class, 'changeCity'])->name('change-city');
+});

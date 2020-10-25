@@ -33,33 +33,18 @@
     </div>
     <div class="app-header__content">
         <div class="app-header-left">
-            <div class="search-wrapper">
-                <div class="input-holder">
-                    <input type="text" class="search-input" placeholder="Type to search">
-                    <button class="search-icon"><span></span></button>
-                </div>
-                <button class="close"></button>
+            <div class="widget-content-left  ml-3 header-user-info">
+                <form class="form-inline" method="POST" action={{route('change-city')}}>
+                    @csrf
+                    <label class="mx-2">City:</label>
+                    <select class="form-control" style="min-width: 200px" onchange="this.form.submit()" name="city">
+                        @foreach (config('custom.cities') as $city)
+                            <option {{session('userCity') == $city ? 'selected' : ''}}>{{$city}}</option>
+                        @endforeach
+                    </select>
+
+                </form>
             </div>
-            <ul class="header-menu nav">
-                <li class="nav-item">
-                    <a href="javascript:void(0);" class="nav-link">
-                        <i class="nav-link-icon fa fa-database"> </i>
-                        Statistics
-                    </a>
-                </li>
-                <li class="btn-group nav-item">
-                    <a href="javascript:void(0);" class="nav-link">
-                        <i class="nav-link-icon fa fa-edit"></i>
-                        Projects
-                    </a>
-                </li>
-                <li class="dropdown nav-item">
-                    <a href="javascript:void(0);" class="nav-link">
-                        <i class="nav-link-icon fa fa-cog"></i>
-                        Settings
-                    </a>
-                </li>
-            </ul>
         </div>
         <div class="app-header-right">
             <div class="header-btn-lg pr-0">
@@ -94,20 +79,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="widget-content-left  ml-3 header-user-info">
-                            <div class="widget-heading">
-                                Alina Mclourd
-                            </div>
-                            <div class="widget-subheading">
-                                VP People Manager
-                            </div>
-                        </div>
-                        <div class="widget-content-right header-user-info ml-3">
-                            <button type="button"
-                                class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example">
-                                <i class="fa text-white fa-calendar pr-1 pl-1"></i>
-                            </button>
-                        </div>
+
                     </div>
                 </div>
             </div>
