@@ -311,8 +311,8 @@
                     <div class="tab-content">
                         <div class="tab-pane fade active show" id="tab-eg-55">
                             <div class="widget-chart p-3">
-                                <div style="height: 350px">
-                                    <canvas id="line-chart"></canvas>
+                                <div class="">
+                                    <livewire:wan-speed-tests/>
                                 </div>
                                 <div class="widget-chart-content text-center mt-5">
                                     <div class="widget-description mt-0 text-warning">

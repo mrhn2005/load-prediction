@@ -22,6 +22,7 @@ mix.js('resources/js/app.js', 'public/js')
 //Panel
 mix.scripts([
     'resources/panel/scripts/main.js',
+    'resources/panel/scripts/custom.js',
 ], 'public/panel/assets/scripts/main.js');
 
 mix.styles([

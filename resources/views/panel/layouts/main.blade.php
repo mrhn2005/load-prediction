@@ -35,8 +35,10 @@
             <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
         </div>
     </div>
-    <script type="text/javascript" src="{{asset('panel/assets/scripts/main.js')}}"></script>
     @livewireScripts
+    <script type="text/javascript" src="{{asset('panel/assets/scripts/main.js')}}"></script>
+
+    @stack('scripts')
 </body>
 
 </html>
